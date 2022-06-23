@@ -18,6 +18,11 @@ public class InterfacePesquisarCorrespondencia extends InterfaceBase implements 
         int carta = 0;
         boolean teste;
 
+        if (destinatarioDAO.pesquisar().size() == 0){
+            JOptionPane.showMessageDialog(null,"Primeiro cadastre algum destinatário", "Não há destinatários cadastrados", JOptionPane.ERROR_MESSAGE);
+            Processador.direcionar("0");
+        }
+
         if (correspondenciaDAO.pesquisar().size()==0){
             JOptionPane.showMessageDialog(null,"Não há correspondencias registradas");
             Processador.direcionar("0");

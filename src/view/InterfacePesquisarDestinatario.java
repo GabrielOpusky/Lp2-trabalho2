@@ -14,8 +14,8 @@ public class InterfacePesquisarDestinatario extends InterfaceBase implements Com
         String search = null;
         String opc = null;
 
-        if (movimentoDAO.pesquisar().size()==0){
-            JOptionPane.showMessageDialog(null,"Não há movimentos registradas");
+       if (destinatarioDAO.pesquisar().size() == 0){
+            JOptionPane.showMessageDialog(null,"Primeiro cadastre algum destinatário", "Não há destinatários cadastrados", JOptionPane.ERROR_MESSAGE);
             Processador.direcionar("0");
         }
 
