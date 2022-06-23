@@ -31,7 +31,18 @@ public class MovimentoDAO implements OperacoesDAO {
 
     @Override
     public void editar(Object newObj) {
+        editarMovimento((Movimento) newObj);
+    }
 
+    public void editarMovimento(Movimento newObj)  {
+        int id = 0;
+        for (Movimento movimento : movimentos){
+            if (newObj.getCorrespondencia().equals(movimento.getCorrespondencia())){
+                movimentos.set(id, newObj);
+                break;
+            }
+            id++;
+        }
     }
 
     @Override

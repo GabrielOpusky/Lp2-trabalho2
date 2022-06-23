@@ -31,7 +31,18 @@ public class CorrespondenciaDAO implements OperacoesDAO{
 
     @Override
     public void editar(Object newObj) {
+        editarCorrespondencia((Correspondencia) newObj);
+    }
 
+    public void editarCorrespondencia(Correspondencia newObj)  {
+        int id = 0;
+        for (Correspondencia correspondencia : correspondencias){
+            if (newObj.getDestino().equals(correspondencia.getDestino())){
+                correspondencias.set(id, newObj);
+                break;
+            }
+            id++;
+        }
     }
 
     @Override

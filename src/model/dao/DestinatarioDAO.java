@@ -37,7 +37,18 @@ public class DestinatarioDAO implements OperacoesDAO {
 
     @Override
     public void editar(Object newObj)  {
+        editarDestinatario((Destinatario) newObj);
+    }
 
+    public void editarDestinatario(Destinatario newObj)  {
+        int id = 0;
+        for (Destinatario destinatario : destinatarios){
+            if (newObj.getNumeroImovel().equals(destinatario.getNumeroImovel())){
+                destinatarios.set(id, newObj);
+                break;
+            }
+            id++;
+        }
     }
 
     @Override
