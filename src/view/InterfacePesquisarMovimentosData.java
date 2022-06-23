@@ -32,18 +32,22 @@ public class InterfacePesquisarMovimentosData extends InterfaceBase implements C
         do {
             try {
                 data = leDados("Informe a data (dd/m/yyyy) Exemplo: '20/7/2019'");
-               if(data.length()> 9){
-                    String[] dataP = data.split("/");
-                    int a = parseInt(dataP[0]);
-                    int b = parseInt(dataP[1]);
-                    data = Integer.toString(a) + "/" + Integer.toString(b) + "/" + dataP[2];
-                    teste = false;
-                }
+                String[] dataP = data.split("/");
+                if (dataP.length() != 3) {throw new ValorInvalidoException();}
+                if((dataP[0].length() != 2) || (dataP[1].length() != 2) || (dataP[2].length() != 4)) {throw new ValorInvalidoException();} 
+                int a = parseInt(dataP[0]);
+                int b = parseInt(dataP[1]);
+                int c = parseInt(dataP[2]);
+                data = Integer.toString(a) + "/" + Integer.toString(b) + "/" + Integer.toString(c);
                 teste = false;
             } catch (CampoVazioException ex) {
-                JOptionPane.showMessageDialog(null, ex.getMessage() + " novamente");
+                JOptionPane.showMessageDialog(null, "Digite algum valor");
             }  catch (NullPointerException e) {
                 Processador.direcionar("0");
+            }  catch (ValorInvalidoException ei) {
+                JOptionPane.showMessageDialog(null, "Digite um valor válido");
+            } catch (NumberFormatException en) {
+                JOptionPane.showMessageDialog(null, "Digite um valor válido em numeros"),
             }
         } while (teste);
 
