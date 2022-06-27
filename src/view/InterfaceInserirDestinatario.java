@@ -32,6 +32,6 @@ public class InterfaceInserirDestinatario extends InterfaceBase implements Coman
         }
 
         if (ch) {destinatarioDAO.inserir(newDestinatario);}
-        System.out.println(destinatarioDAO.getDestinatarios());
+        System.out.println(destinatarioDAO.pesquisar());
     }
 }

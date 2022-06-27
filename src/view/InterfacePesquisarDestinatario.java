@@ -37,14 +37,14 @@ public class InterfacePesquisarDestinatario extends InterfaceBase implements Com
         } while (search == null);
 
         if (opc.equals("1")){
-            for (Destinatario destinatario : destinatarioDAO.getDestinatarios()) {
+            for (Destinatario destinatario : destinatarioDAO.pesquisar()) {
                 if(Objects.equals(destinatario.getNome(), search)){
                     String sdestinatario = destinatario.toString() + " \nAutorizados = " + destinatario.getAutorizados();
                     JOptionPane.showMessageDialog(null, sdestinatario, "Dados", 0, null);
                 }
             }
         } else if (opc.equals("2")){
-            for (Destinatario destinatario : destinatarioDAO.getDestinatarios()) {
+            for (Destinatario destinatario : destinatarioDAO.pesquisar()) {
                 if(Objects.equals(destinatario.getNumeroImovel(), search)){
                     JOptionPane.showMessageDialog(null, destinatario.toString() + " \nAutorizados = " + destinatario.getAutorizados());
                 }

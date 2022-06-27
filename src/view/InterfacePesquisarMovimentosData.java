@@ -33,7 +33,7 @@ public class InterfacePesquisarMovimentosData extends InterfaceBase implements C
             try {
                 data = leDados("Informe a data (dd/m/yyyy) Exemplo: '20/7/2019'");
                 String[] dataP = data.split("/");
-                if (dataP.length() != 3) {throw new ValorInvalidoException();}
+                if (dataP.length != 3) {throw new ValorInvalidoException();}
                 if((dataP[0].length() != 2) || (dataP[1].length() != 2) || (dataP[2].length() != 4)) {throw new ValorInvalidoException();} 
                 int a = parseInt(dataP[0]);
                 int b = parseInt(dataP[1]);

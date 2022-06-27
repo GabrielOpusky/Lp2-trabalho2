@@ -33,6 +33,6 @@ public class InterfaceExcluirDestinatario extends InterfaceBase implements Coman
 
 
         destinatarioDAO.excluir(new Destinatario(nome,numeroImovel));
-        System.out.println(destinatarioDAO.getDestinatarios());
+        System.out.println(destinatarioDAO.pesquisar());
     }
 }

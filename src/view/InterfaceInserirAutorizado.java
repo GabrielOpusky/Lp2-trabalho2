@@ -28,7 +28,7 @@ public class InterfaceInserirAutorizado extends InterfaceBase implements Comando
 
         Destinatario searchDestinatario = new Destinatario(nome, numeroImovel);
 
-        for (Destinatario destinatario : destinatarioDAO.getDestinatarios()){
+        for (Destinatario destinatario : destinatarioDAO.pesquisar()){
             if(Objects.equals(destinatario.toString(), searchDestinatario.toString())){
                 while (0==JOptionPane.showConfirmDialog(null, "Deseja inserir novo autorizado?")){
                     try {

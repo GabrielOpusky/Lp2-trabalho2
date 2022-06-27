@@ -15,10 +15,6 @@ public class DestinatarioDAO implements OperacoesDAO {
         this.destinatarios = new ArrayList<Destinatario>();
     }
 
-    public List<Destinatario> getDestinatarios() {
-        return destinatarios;
-    }
-
     @Override
     public void inserir(Object obj) {
             destinatarios.add((Destinatario) obj);
